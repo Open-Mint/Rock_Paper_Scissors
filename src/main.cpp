@@ -23,12 +23,21 @@ int main()
 
     int choice = 0;
     std::cin >> choice;    
-    std::cout << "_______________________________\n";
     
+    if(choice > 2 || choice < 0)
+    {
+        std::cout << "Please try again and choose a number between 0 and 2.\n";
+        return 1;
+    }
+
+    std::cout << "_______________________________\n";
+
     Player computer;
 
-    std::cout << "You chose : " << choice << '\n';
-    std::cout << "Computer chose: " << computer.choice << '\n';
+    std::string options[3] = {"Rock", "Paper", "Scissors"};
+
+    std::cout << "You chose : " << options[choice] << '\n';
+    std::cout << "Computer chose: " << options[computer.choice] << '\n';
 
     if(computer.choice == choice)
     {
